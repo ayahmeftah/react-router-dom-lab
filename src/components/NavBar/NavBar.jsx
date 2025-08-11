@@ -2,11 +2,13 @@ import { Link } from "react-router"
 
 const NavBar = () => {
 
-    return(
+    return (
         <>
-            <Link to='/'>Home</Link>
-            <Link to='/mailboxes'>Mailboxes</Link>
-            <Link to='/new-mailbox'>New Mailbox</Link>
+            <ul>
+                <li><Link to='/'>Home</Link></li>
+                <li><Link to='/mailboxes'>Mailboxes</Link></li>
+                <li><Link to='/new-mailbox'>New Mailbox</Link></li>
+            </ul>
         </>
     )
 }
