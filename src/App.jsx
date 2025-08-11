@@ -1,6 +1,7 @@
 // src/App.jsx
 import { BrowserRouter as Router, Routes, Route } from "react-router";
 import { useState } from "react";
+// import { useNavigate } from "react-router";
 
 import NavBar from "./components/NavBar/NavBar";
 import MailboxList from "./components/MailboxList/MailboxList";
@@ -8,7 +9,7 @@ import MailboxDetails from "./components/MailboxDetails/MailboxDetails"
 import MailboxForm from "./components/MailboxForm/MailboxForm"
 
 const App = () => {
-
+  // const navigate = useNavigate()
   const [mailboxes, setMailboxes] = useState([])
   const [newMailbox, setNewMailBox] = useState({
     boxSize: '',
@@ -30,7 +31,7 @@ const App = () => {
       boxSize: '',
       boxOwner: ''
     })
-    console.log(mailboxes)
+    // navigate('/mailboxes')
   }
 
 
@@ -42,7 +43,7 @@ const App = () => {
           <Route path='/' element={<main><h1>Post Office</h1></main>}/>
           <Route path="/mailboxes" element={<MailboxList mailboxes={mailboxes} />} />
           <Route path="/new-mailbox" element={<MailboxForm addBox={addBox} handleInputChange={handleInputChange} newMailbox={newMailbox}/>}/>
-          <Route path="/mailboxes/:mailboxId" element={<MailboxDetails />}/>
+          <Route path="/mailboxes/:mailboxId" element={<MailboxDetails mailboxes={mailboxes} />}/>
         </Routes>
       </Router>
     </>

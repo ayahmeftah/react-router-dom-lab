@@ -10,6 +10,7 @@ const MailboxForm = (props) => {
                 <input type="text" name="boxOwner" placeholder="Boxholder name" onChange={props.handleInputChange} value={props.newMailbox.boxOwner}/>
                 <label>Select a Box Size</label>
                 <select name="boxSize" value={props.newMailbox.boxSize} onChange={props.handleInputChange}>
+                    <option value="">Select Box Size</option>
                     <option value="Small">Small</option>
                     <option value="Medium">Medium</option>
                     <option value="Large">Large</option>
